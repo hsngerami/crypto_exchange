@@ -39,7 +39,7 @@ class AuthService(BaseService):
         """
         try:
             user = UserService.get_user_by_username(username)
-        except ValidationError:
+        except User.DoesNotExist:
             logger.error(f"user with {username} does not exist.")
             raise AuthenticationFailed()
         if user.check_password(password) is False:

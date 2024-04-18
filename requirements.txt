@@ -23,12 +23,14 @@ incremental==22.10.0
 inflection==0.5.1
 jsonschema==4.21.1
 jsonschema-specifications==2023.12.1
+psycopg2==2.9.3
 pyasn1==0.6.0
 pyasn1_modules==0.4.0
 pycparser==2.22
 PyJWT==2.8.0
 pyOpenSSL==24.1.0
 python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
 PyYAML==6.0.1
 referencing==0.34.0
 requests==2.31.0
