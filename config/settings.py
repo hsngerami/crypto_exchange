@@ -167,7 +167,7 @@ REST_FRAMEWORK = {
 
 # ============= Swagger Settings =============
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Talaeshow',
+    'TITLE': 'Exchange API',
     'DESCRIPTION': 'API Documentation',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
