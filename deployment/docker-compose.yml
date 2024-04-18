@@ -36,5 +36,5 @@ networks:
     external: true
 
 volumes:
-    exchange_db_data:
-      name: exchange_db_data
+  exchange_db_data:
+    name: exchange_db_data
