@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+
+  postgres:
+    image: postgres:12.2
+    command: postgres -c stats_temp_directory=/tmp
+    restart: always
+    container_name: exchange_postgres
+    volumes:
+      - exchange_db_data:/var/lib/postgresql/data
+    ports:
+      - 5437:5432
+    env_file:
+      - .env
+    networks:
+      - exchange_dev
+
+  exchange:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    container_name: exchange
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - exchange_dev
+    depends_on:
+      - postgres
+    ports:
+      - 8000:8000
+
+networks:
+  exchange_dev:
+    external: true
+
+volumes:
+    exchange_db_data:
+      name: exchange_db_data
